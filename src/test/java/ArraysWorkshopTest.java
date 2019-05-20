@@ -11,7 +11,7 @@ public class ArraysWorkshopTest {
         int[] actual = new int[]{5, 4, 3, 2, 1};
         int[] expected = new int[]{1, 2, 3, 4, 5};
 
-        assertThat(arraysWorkshop.reverseArray(actual), is(expected));
+        assertThat(arraysWorkshop.reverse(actual), is(expected));
     }
 
     @Test
@@ -19,6 +19,14 @@ public class ArraysWorkshopTest {
         int[] actual = new int[]{5, 4, 3, 2};
         int[] expected = new int[]{2, 3, 4, 5};
 
-        assertThat(arraysWorkshop.reverseArray(actual), is(expected));
+        assertThat(arraysWorkshop.reverse(actual), is(expected));
+    }
+
+    @Test
+    public void sortArray() {
+        int[] actual = new int[]{2, 3, 4, 1, 5, 1};
+        int[] expected = new int[]{1, 1, 2, 3, 4, 5};
+
+        assertThat(arraysWorkshop.sort(actual), is(expected));
     }
 }
