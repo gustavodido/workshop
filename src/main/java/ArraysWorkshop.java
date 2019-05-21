@@ -50,4 +50,24 @@ public class ArraysWorkshop {
         return Arrays.copyOfRange(mergedArray, 0, first.length + addedElements);
     }
 
+    private boolean internalBinarySearch(int[] array, int element, int low, int high) {
+        if (high < low) {
+            return false;
+        }
+
+        int middle = (low + high) / 2;
+
+        if (array[middle]== element) {
+            return true;
+        } else if (array[middle] > element) {
+            return internalBinarySearch(array, element, middle + 1, high);
+        } else {
+            return internalBinarySearch(array, element, low, middle - 1);
+        }
+
+    }
+
+    public boolean binarySearch(int[] array, int element) {
+        return internalBinarySearch(array, element, 0, array.length);
+    }
 }

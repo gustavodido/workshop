@@ -38,4 +38,17 @@ public class ArraysWorkshopTest {
 
         assertThat(arraysWorkshop.merge(first, second), is(expected));
     }
+
+    @Test
+    public void searchValidNumber() {
+        int[] actual = new int[]{2, 3, 4, 1, 5, 1};
+        assertThat(arraysWorkshop.binarySearch(actual, 3), is(true));
+    }
+
+    @Test
+    public void searchInvalidNumber() {
+        int[] actual = new int[]{2, 3, 4, 1, 5, 1};
+        assertThat(arraysWorkshop.binarySearch(actual, 8), is(false));
+    }
+
 }
