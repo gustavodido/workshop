@@ -1,4 +1,9 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+import static com.google.common.primitives.Ints.asList;
 
 public class ArraysWorkshop {
     public int[] reverse(int[] array) {
@@ -26,6 +31,23 @@ public class ArraysWorkshop {
         }
 
         return sortedArray;
+    }
+
+    public int[] merge(int[] first, int[] second) {
+        int[] mergedArray = Arrays.copyOf(first, first.length + second.length);
+
+        Set<Integer> foundElements = new HashSet<>(asList(first));
+        int addedElements = 0;
+
+        for (int i = 0; i < second.length; i++) {
+            if (!foundElements.contains(second[i])) {
+                foundElements.add(second[i]);
+                mergedArray[first.length + addedElements] = second[i];
+                addedElements++;
+            }
+        }
+
+        return Arrays.copyOfRange(mergedArray, 0, first.length + addedElements);
     }
 
 }

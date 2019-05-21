@@ -29,4 +29,13 @@ public class ArraysWorkshopTest {
 
         assertThat(arraysWorkshop.sort(actual), is(expected));
     }
+
+    @Test
+    public void mergeArrays() {
+        int[] first = new int[]{2, 3, 4, 1, 5, 1};
+        int[] second = new int[]{1, 1, 2, 3, 4, 6};
+        int[] expected = new int[]{2, 3, 4, 1, 5, 1, 6};
+
+        assertThat(arraysWorkshop.merge(first, second), is(expected));
+    }
 }
