@@ -51,4 +51,10 @@ public class ArraysWorkshopTest {
         assertThat(arraysWorkshop.binarySearch(actual, 8), is(false));
     }
 
+    @Test
+    public void gradingStudents() {
+        int[] input = new int[]{73, 67, 38, 33};
+        int[] output = new int[]{75, 67, 40, 33};
+        assertThat(arraysWorkshop.gradingStudents(input), is(output));
+    }
 }

@@ -70,4 +70,23 @@ public class ArraysWorkshop {
     public boolean binarySearch(int[] array, int element) {
         return internalBinarySearch(array, element, 0, array.length);
     }
+
+    public int[] gradingStudents(int[] grades) {
+        int[] result = new int[grades.length];
+
+        for(int i = 0; i < grades.length; i++) {
+            int grade = grades[i];
+            int multiple =  (int)Math.ceil(grade / 5d) * 5;
+            int difference = multiple - grade;
+
+            if (grade < 38 || difference >= 3) {
+                result[i] = grade;
+            }
+            else {
+                result[i] = multiple;
+            }
+        }
+
+        return result;
+    }
 }
