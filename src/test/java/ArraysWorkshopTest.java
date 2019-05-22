@@ -57,4 +57,12 @@ public class ArraysWorkshopTest {
         int[] output = new int[]{75, 67, 40, 33};
         assertThat(arraysWorkshop.gradingStudents(input), is(output));
     }
+
+    @Test
+    public void lonelyInteger() {
+        int[] input = new int[]{0, 0, 1, 2, 1 };
+        int output = 2;
+
+        assertThat(arraysWorkshop.lonelyinteger(input), is(output));
+    }
 }

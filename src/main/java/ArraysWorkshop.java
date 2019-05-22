@@ -1,7 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static com.google.common.primitives.Ints.asList;
 
@@ -88,5 +86,22 @@ public class ArraysWorkshop {
         }
 
         return result;
+    }
+
+    public int lonelyinteger(int[] a) {
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+        for (int i1 : a) {
+            int frequency = frequencyMap.getOrDefault(i1, 0);
+            frequencyMap.put(i1, frequency + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+
+        return 0;
     }
 }
