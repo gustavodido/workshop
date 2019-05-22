@@ -3,8 +3,8 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class RegExpWorkshopTest {
-    private RegExpWorkshop regexpWorkshop = new RegExpWorkshop();
+public class StringWorkshopTest {
+    private StringWorkshop regexpWorkshop = new StringWorkshop();
 
     @Test
     public void reverseArrayWithOddElements() {
